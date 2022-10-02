@@ -1,5 +1,8 @@
 package com.epam.rd.java.basic.topic05.task03;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Task {
 
 	private int numberOfThreads;
@@ -57,6 +60,7 @@ public class Task {
 			try {
 				Thread.sleep(pause);
 			} catch (InterruptedException e) {
+				Logger.getLogger(Task.class.getName()).log(Level.SEVERE, null, e);
 				Thread.currentThread().interrupt();
 			}
 			c2++;
@@ -68,6 +72,7 @@ public class Task {
 			try {
 				t.join();
 			} catch (InterruptedException e) {
+				Logger.getLogger(Task.class.getName()).log(Level.SEVERE, null, e);
 				Thread.currentThread().interrupt();
 			}
 		}
